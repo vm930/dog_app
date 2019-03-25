@@ -1,15 +1,24 @@
 <h1>create a user</h1>
+  <% if flash[:user_errors] %>
+    <% flash[:user_errors].each do |error| %>
+      <li> <%= error %> </li>
+    <% end %>
+  <% end %>
+</ol>
+
 <%= form_for @user do |f| %>
-<%= f.label :f_name %>
-<%= f.text_field :f_name %>
-<%= f.label :l_name %>
-<%= f.text_field :l_name %>
+<%= f.label "Frist Name" %>
+<%= f.text_field :f_name %><br>
+<%= f.label "Last Name" %>
+<%= f.text_field :l_name %><br>
+<%= f.label :age %>
+<%= f.number_field :age %><br>
 <%= f.label :address %>
-<%= f.text_field :address %>
+<%= f.text_field :address %><br>
 <%= f.label :occupation %>
-<%= f.text_field :occupation %>
+<%= f.text_field :occupation %><br>
 <%= f.label :bio %>
-<%= f.text_field :bio %>
+<%= f.text_area :bio %><br>
 
 <%= f.submit %>
   

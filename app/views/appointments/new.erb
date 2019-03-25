@@ -1,0 +1,29 @@
+<h1>new appointment</h>
+
+<ol>
+  <% if flash[:appt_errors] %>
+    <% flash[:appt_errors].each do |error| %>
+      <li> <%= error %> </li>
+    <% end %>
+  <% end %>
+</ol>
+
+
+<%= form_for @appointment do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :category %>
+  <%= f.select :category, ['Excerise', 'Breeding', 'Training', 'Dog Sitting', 'Grooming']%><br>
+  <%= f.label :location %>
+  <%= f.text_field :location %><br>
+  <%= f.label :price %>
+  <%= f.number_field :price %><br>
+  <%= f.label :description %>
+  <%= f.text_area :description%><br> 
+  <%= f.label :dog %>
+  <%= f.collection_select(:dog_id, @dogs, :id, :name, prompt: true)%><br>
+  <%= f.submit %><br>
+
+
+
+<% end %>

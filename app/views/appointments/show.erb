@@ -1,0 +1,10 @@
+<h1>appointment show page</h1>
+Title: <%= @appointment.title %><br>
+User Id: <%= @appointment.user_id%>
+
+
+<%= form_for @appointment do |f| %>  
+<%= f.label :who %>
+<%= f.collection_select :user_id, @users,:id, :f_name %>
+<%= f.submit%>
+<% end %>

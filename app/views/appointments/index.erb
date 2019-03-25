@@ -1,0 +1,12 @@
+<h1>this is all of the appointments</h1>
+
+
+<% @appointments.each do |appt| %>
+<%= link_to appt.title, appointment_path(appt) %>
+<%= appt.location %>
+<%= appt.dog.name%>
+<%= appt.user_id%>
+
+<%= appt.description %> <br>
+<% end %>
+ <br>
