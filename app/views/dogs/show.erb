@@ -8,3 +8,5 @@ Size: <%= @dog.size %> <br>
 <%= button_to 'Logout', logout_path, method: :delete %> <br>
 <%= button_to "Edit", edit_dog_path(@dog.id), :method => :get %> <br>
 <%= button_to "Delete", @dog, :method => :delete %>
+
+<%= button_to "Make a new Appointment", new_appointment_path, :method => :get %>

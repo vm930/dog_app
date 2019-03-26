@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorized
 
   def new
     render :new
@@ -13,9 +14,11 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
+      session[:dog_id] = nil
         redirect_to @user
     elsif @doguser && @doguser.authenticate(params[:password])
       session[:dog_id] = @doguser.id
+      session[:user_id] = nil
         redirect_to @doguser
     else
       flash[:notice] = "Invalid Username or Password"
@@ -24,7 +27,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete(:user_id && :dog_id)
+    session.delete(:user_id)
+    session.delete(:dog_id)
     # flash[:notice] = "Logged Out"
     redirect_to '/'
   end
