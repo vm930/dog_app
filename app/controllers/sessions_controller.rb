@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     else
       @doguser = Dog.find_by(username: params[:username])
     end
-    
+
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
         redirect_to @user
@@ -21,6 +21,12 @@ class SessionsController < ApplicationController
       flash[:notice] = "Invalid Username or Password"
       redirect_to login_path
     end
+  end
+
+  def destroy
+    session.delete(:user_id && :dog_id)
+    # flash[:notice] = "Logged Out"
+    redirect_to '/'
   end
 
 end

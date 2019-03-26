@@ -26,15 +26,21 @@ class DogsController < ApplicationController
     @dog = Dog.find(params[:id])
   end
 
-   def update
-    dog = Dog.find(params[:id])
-    dog.update(dog_param)
-    if dog.valid?
-      redirect_to dog_path(dog.id)
+  def update
+    @dog = Dog.find(params[:id])
+    @dog.update(dog_param)
+    if @dog.valid?
+      redirect_to dog_path(@dog.id)
     else
       flash[:dog_errors] = dog.errors.full_messages
-        redirect_to new_dog_path
+        redirect_to edit_dog_path
     end
+  end
+
+  def destroy
+      @dog = Dog.find(params[:id])
+      @dog.destroy
+      redirect_to dogs_path
   end
 
   private

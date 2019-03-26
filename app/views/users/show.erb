@@ -9,3 +9,6 @@
 <%= @user.location %>
 </li>
 </ul>
+<%= button_to 'Logout', logout_path, method: :delete %> <br>
+<%= button_to "Edit", edit_user_path(@user.id), :method => :get %> <br>
+<%= button_to "Delete", @user, :method => :delete %>

@@ -5,3 +5,6 @@ Age: <%= @dog.age %> <br>
 Personality: <%= @dog.personality %> <br>
 Size: <%= @dog.size %> <br>
 </ul>
+<%= button_to 'Logout', logout_path, method: :delete %> <br>
+<%= button_to "Edit", edit_dog_path(@dog.id), :method => :get %> <br>
+<%= button_to "Delete", @dog, :method => :delete %>
