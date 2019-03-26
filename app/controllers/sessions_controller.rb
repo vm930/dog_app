@@ -5,8 +5,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(username: params[:username])
-    @doguser = Dog.find_by(username: params[:username])
+    if params[:dog_or_user] == "User"
+      @user = User.find_by(username: params[:username])
+    else
+      @doguser = Dog.find_by(username: params[:username])
+    end
+    
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
         redirect_to @user
