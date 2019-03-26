@@ -12,7 +12,7 @@ Appointment Title:
   This appointment has not been taken yet
 <% end %>
 
-<%  if current_user.class.model_name.name == "User" %>
+<%  if current_user.class.model_name.name == "User" && @appointment.user_id == nil %>
 <%= button_to "Take Appointment", appointment_helper_path(@appointment.id), :method => :patch %>
 <% end %>
 

@@ -5,8 +5,9 @@ Age: <%= @dog.age %> <br>
 Personality: <%= @dog.personality %> <br>
 Size: <%= @dog.size %> <br>
 </ul>
-<%= button_to 'Logout', logout_path, method: :delete %> <br>
+
+<% if current_user.class.model_name.name == "Dog" && current_user.id == @dog.id %>
 <%= button_to "Edit", edit_dog_path(@dog.id), :method => :get %> <br>
 <%= button_to "Delete", @dog, :method => :delete %>
-
 <%= button_to "Make a new Appointment", new_appointment_path, :method => :get %>
+<% end %>

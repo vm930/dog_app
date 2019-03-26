@@ -10,5 +10,7 @@
 </li>
 </ul>
 <%= button_to 'Logout', logout_path, method: :delete %> <br>
+<% if current_user.id == @user.id %>
 <%= button_to "Edit", edit_user_path(@user.id), :method => :get %> <br>
 <%= button_to "Delete", @user, :method => :delete %>
+<% end %>
