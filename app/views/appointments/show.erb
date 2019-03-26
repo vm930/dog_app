@@ -1,13 +1,19 @@
 <h1>appointment show page</h1>
+<h4><%= flash[:cant_delete]  %></h4>
 
 <label>
-Appointment Title: 
+Appointment Title:
 </label>
 <%= @appointment.title %><br>
-User Id: <%= @appointment.user.id%>
 
-<%= form_for @appointment do |f| %>  
-<%= f.label "Whose Dog?" %>
-<%= f.collection_select :user_id, @users,:id, :f_name %>
-<%= f.submit%>
+<% if @appointment.user %>
+  Taken By: <%= @appointment.user.full_name%>
+<% else  %>
+  This appointment has not been taken yet
 <% end %>
+
+<%  if current_user.class.model_name.name == "User" %>
+<%= button_to "Take Appointment", appointment_helper_path(@appointment.id), :method => :patch %>
+<% end %>
+
+<%= button_to "Delete", @appointment, :method => :delete %>

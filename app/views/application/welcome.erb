@@ -1,11 +1,13 @@
 <h1>WELCOME TO THIS FREAKING APP </h1> <br>
+<h4> <%= flash[:logout] %></h4>
 
 <h2> View Our Community </h2>
 <%= button_to "Users", users_path, :method => :get %><br>
 <%= button_to "Dogs", dogs_path, :method => :get %><br>
+<%= button_to "Appointments", appointments_path, :method => :get %>
 
 
 <h2> Join Our Community </h2>
 
 <%= button_to "Login", login_path, :method => :get%> <br>
-<%= button_to "Get Started", get_started_path, :method => :get%>
+<%= button_to "Get Started", get_started_path, :method => :get%> <br>
