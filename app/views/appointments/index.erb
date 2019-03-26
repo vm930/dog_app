@@ -1,9 +1,9 @@
 <h1>this is all of the appointments</h1>
+<h4> <%= flash[:appt_notice] %></h4>
 
 <%= form_tag(appointments_path, method: "get") do %>
   <%= label_tag("appt_search", "Search for:") %>
   <%= text_field_tag :appt_search%>
-  <%# <%byebug%> 
   <%= submit_tag("Go") %>
 <% end %><br>
 
@@ -12,7 +12,6 @@
 <%= appt.location %>
 <%= appt.dog.name%>
 <%= appt.user_id%>
-
 <%= appt.description %> <br>
 <% end %>
- <br>
+<br>
