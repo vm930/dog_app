@@ -9,6 +9,7 @@ class AppointmentsController < ApplicationController
 
     def new
       byebug
+
       if current_user.class.model_name.name == "Dog"
         @appointment = Appointment.new
         @dogs = Dog.all
