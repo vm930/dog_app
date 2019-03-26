@@ -1,6 +1,10 @@
 class AppointmentsController < ApplicationController
     def index 
-        @appointments = Appointment.all
+        if params[:appt_search]
+            @appointments = Appointment.where(title:  params[:appt_search])
+        else 
+            @appointments = Appointment.all
+        end 
     end 
 
     def new 
@@ -16,7 +20,7 @@ class AppointmentsController < ApplicationController
     def create 
         appointment = Appointment.create(appointment_params)
         if appointment.valid?
-            redirect_to appointment_path(appointment.id)
+            redirect_to appointments_path
         else
             flash[:appt_errors] = appointment.errors.full_messages
             redirect_to new_appointment_path

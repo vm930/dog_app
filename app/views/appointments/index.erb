@@ -1,8 +1,14 @@
 <h1>this is all of the appointments</h1>
 
+<%= form_tag(appointments_path, method: "get") do %>
+  <%= label_tag("appt_search", "Search for:") %>
+  <%= text_field_tag :appt_search%>
+  <%# <%byebug%> 
+  <%= submit_tag("Go") %>
+<% end %><br>
 
 <% @appointments.each do |appt| %>
-<%= link_to appt.title, appointment_path(appt) %>
+<li><%= link_to appt.title, appointment_path(appt) %></li>
 <%= appt.location %>
 <%= appt.dog.name%>
 <%= appt.user_id%>
