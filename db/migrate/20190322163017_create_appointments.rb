@@ -6,6 +6,7 @@ class CreateAppointments < ActiveRecord::Migration[5.2]
       t.integer :dog_id
       t.integer :user_id
       t.string :location
+      t.string :date
       t.integer :price
       t.string :description
 

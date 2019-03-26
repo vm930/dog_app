@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_03_22_163114) do
     t.integer "dog_id"
     t.integer "user_id"
     t.string "location"
+    t.string "date"
     t.integer "price"
     t.string "description"
     t.datetime "created_at", null: false
@@ -25,11 +26,16 @@ ActiveRecord::Schema.define(version: 2019_03_22_163114) do
   end
 
   create_table "dogs", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
     t.string "name"
+    t.string "gender"
     t.string "breed"
+    t.string "color"
     t.integer "age"
-    t.integer "personality"
+    t.string "personality"
     t.string "size"
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,12 +49,13 @@ ActiveRecord::Schema.define(version: 2019_03_22_163114) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "f_name"
-    t.string "l_name"
+    t.string "username"
+    t.string "password_digest"
+    t.string "full_name"
     t.integer "age"
     t.string "occupation"
     t.string "bio"
-    t.string "address"
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
