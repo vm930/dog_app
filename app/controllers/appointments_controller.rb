@@ -8,8 +8,6 @@ class AppointmentsController < ApplicationController
     end
 
     def new
-      byebug
-
       if current_user.class.model_name.name == "Dog"
         @appointment = Appointment.new
         @dogs = Dog.all
@@ -50,6 +48,24 @@ class AppointmentsController < ApplicationController
             flash[:appt_errors] = appointment.errors.full_messages
             redirect_to edit_appointment_path
         end
+    end
+
+    def destroy
+      @appointment = Appointment.find(params[:id])
+      if current_user[:id] == @appointment.dog_id
+        @appointment.destroy
+        redirect_to appointments_path
+      else
+        flash[:cant_delete] = "This dog can not delete this appointment"
+        redirect_to appointment_path(@appointment.id)
+      end
+    end
+
+    def appointment_toggle
+      @appointment = Appointment.find(params[:id])
+      @appointment.user_id = current_user[:id]
+      @appointment.save
+      redirect_to appointment_path(@appointment.id)
     end
 
     private
