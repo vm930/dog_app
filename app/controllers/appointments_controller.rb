@@ -24,10 +24,20 @@ class AppointmentsController < ApplicationController
         
     end 
 
-    def update 
+    def edit 
         @appointment = Appointment.find(params[:id])
-        @appointment.update(appointment_params)
-        redirect_to appointment_path(@appointment)
+        @dogs = Dog.all
+    end 
+
+    def update
+        appointment = Appointment.find(params[:id])
+        appointment.update(appointment_params)
+        if appointment.valid?
+            redirect_to appointment_path(appointment)
+        else 
+            flash[:appt_errors] = appointment.errors.full_messages
+            redirect_to edit_appointment_path
+        end 
     end
 
     private

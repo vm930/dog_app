@@ -1,10 +1,13 @@
 <h1>appointment show page</h1>
-Title: <%= @appointment.title %><br>
-User Id: <%= @appointment.user_id%>
 
+<label>
+Appointment Title: 
+</label>
+<%= @appointment.title %><br>
+User Id: <%= @appointment.user.id%>
 
 <%= form_for @appointment do |f| %>  
-<%= f.label :who %>
+<%= f.label "Whose Dog?" %>
 <%= f.collection_select :user_id, @users,:id, :f_name %>
 <%= f.submit%>
 <% end %>
