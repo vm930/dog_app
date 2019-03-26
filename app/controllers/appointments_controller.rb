@@ -13,7 +13,6 @@ class AppointmentsController < ApplicationController
         @users = User.all
     end 
 
-
     def create 
         appointment = Appointment.create(appointment_params)
         if appointment.valid?
@@ -30,8 +29,6 @@ class AppointmentsController < ApplicationController
         @appointment.update(appointment_params)
         redirect_to appointment_path(@appointment)
     end
-
-   
 
     private
     def appointment_params
