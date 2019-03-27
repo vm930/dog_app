@@ -2,9 +2,16 @@
     <div class="nav-wrapper blue-grey lighten-4">
       <a href="/" class="brand-logo">PAWLY</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li> <% if current_user %>
+          <%= link_to 'Appointments', appointments_path, method: :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1" %>
+        <% end %>
+        </li>
         <li> <%= link_to "Dogs", dogs_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
         <li> <%= link_to "Home", home_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
-        <li> <%= link_to "Login", login_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+        <li><% if current_user %>
+          <%= link_to 'Logout', logout_path, method: :delete, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1" %>
+        <% end %>
+        </li>
       </ul>
     </div>
   </nav>
@@ -25,21 +32,10 @@
           <p><%= user.bio %></p>
         </div>
         <div class="card-action">
-          <a href="#"><%= user.full_name %></a>
+          <a href="<%= user_path(user) %>"><%= user.full_name %></a>
         </div>
       </div>
     </div>
 
 <% end %>
 </div>
-
-<footer class="page-footer white lighten-3">
-    <div class="container">
-        <div class="footer-copyright blue-grey lighten-4">
-            <div class="container">
-              © 2019 Copyright Text
-              <a class="grey-text text-lighten-4 right" href="#!">Made With Love // <3 </a>
-            </div>
-        </div>
-    </div>
-</footer>

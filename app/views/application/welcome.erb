@@ -1,6 +1,6 @@
 
 <div class="Logo">
-<img src="/pawly.png" style="width:130px;height:130px;">
+<img src="/pawly.png" style="width:135px;height:135px;">
 </div>
 
 <div class="background">
@@ -12,7 +12,9 @@
 </div>
 
 <div class="login_button">
+  <% if current_user == nil %>
 <%= button_to "Log in", login_path, :method => :get, class: "waves-effect waves-light btn blue-grey lighten-3"%>
+<% end %>
 </div>
 
 <div class="dog_button">
@@ -24,7 +26,7 @@
 </div>
 
 <div class="support_button">
-<a class="waves-effect waves-hard btn-flat transparent grey-text text-darken-1">Support</a>
+<%= button_to "Support", support_path, :method => :get, class: "waves-effect waves-hard btn-flat transparent grey-text text-darken-1"%>
 </div>
 
 <div class="Paragraph flow-text white-text text-darken-2">
@@ -43,24 +45,14 @@
  <a class="btn-floating btn-large waves-effect waves-light btn-small blue-grey lighten-3"><i class="material-icons">+</i></a>
 </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="logout">
+  <% if current_user %>
+    <%= button_to 'Logout', logout_path, method: :delete, class: "waves-effect waves-light btn blue-grey lighten-3" %>
+  <% end %>
+</div>
 
-  <!-- <div class="container">
-      <%# <%= button_to "Appointments", appointments_path, :method => :get %> %>
-  </div> -->
-
-
-
-<h4> <%= flash[:logout] %></h4>
-<div class="started">
-<%# <%= button_to 'Logout', logout_path, method: :delete %> <br>
+<div class="appointments">
+  <% if current_user %>
+    <%= button_to 'Appointments', appointments_path, method: :get, class: "waves-effect waves-hard btn-flat transparent grey-text text-darken-1" %>
+  <% end %>
 </div>
