@@ -1,7 +1,10 @@
-<h1>Show me all the users</h1>
+
+<h1>All Of Users</h1>
 
 <ul>
+<div class="input-field">
 <% @users.each do |user| %>
 <li><%= user.full_name %></li><br>
 <% end %>
 </ul>
+</div>
