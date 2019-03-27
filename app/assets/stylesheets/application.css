@@ -15,7 +15,7 @@
  */
 
  /*
- vickys change begin 
+ vickys change begin
  */
 
  @import "materialize";
@@ -24,6 +24,11 @@
  /* h1 {
      font-family: Arial, Helvetica, sans-serif;
      font-size: 3em;
+ } */
+
+ /* html, body {
+   height: 100%;
+
  } */
 
  .container {
@@ -63,7 +68,7 @@
 }
 
  /*
- vickys change end 
+ vickys change end
  */
 
  .Logo {
@@ -80,14 +85,14 @@
 
 .started_button {
   position: absolute;
-  top: 50px;
-  right: 30px;
+  top: 15px;
+  right: 53px;
 }
 
 .login_button {
   position: absolute;
-  top: 50px;
-  right: 196px;
+  top: 25px;
+  right: 199px;
 }
 
 .dog_button {
@@ -105,7 +110,7 @@
 .support_button {
   position: absolute;
   top: 51px;
-  right: 1005px;
+  right: 1010px;
 }
 
 .Paragraph {
@@ -129,4 +134,36 @@
 
 .brand-logo {
   margin-left: 10px;
+}
+
+.card-content {
+  color: gray;
+  font-family: ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.jessy {
+  margin-top: 1%;
+}
+
+.row {
+  margin-top: 1%;
+}
+
+.team {
+  position: absolute;
+  top: 640px;
+  left: 590px;
+  font-family: ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logout {
+  position: absolute;
+  top: 24px;
+  right: 199px;
+}
+
+.appointments {
+  position: absolute;
+  top: 51px;
+  right: 59.5%;
 }

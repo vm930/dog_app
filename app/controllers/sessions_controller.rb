@@ -15,11 +15,11 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       session[:dog_id] = nil
-        redirect_to @user
+        redirect_to '/'
     elsif @doguser && @doguser.authenticate(params[:password])
       session[:dog_id] = @doguser.id
       session[:user_id] = nil
-        redirect_to @doguser
+        redirect_to '/'
     else
       flash[:notice] = "Invalid Username or Password"
       redirect_to login_path
