@@ -1,4 +1,19 @@
-<h1>this is all of the appointments</h1>
+<nav>
+    <div class="nav-wrapper blue-grey lighten-4">
+      <a href="/" class="brand-logo">PAWLY</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li> <%= link_to "Dogs", dogs_path, :method => :get, class: "waves-effect waves-light btn-flat white grey-text text-darken-1"%></li>
+        <li> <%= link_to "Users", users_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+        <li> <%= link_to "Home", home_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+          <li>  <% if current_user %>
+                <%= link_to 'Logout', logout_path, method: :delete, class: "waves-effect waves-light btn-flat white grey-text text-darken-1" %>
+                <% end %>
+          <li>
+    </div>
+  </nav>
+
+
+
 <h4> <%= flash[:appt_notice] %></h4>
 
 <%= form_tag(appointments_path, method: "get") do %>

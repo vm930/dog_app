@@ -1,0 +1,68 @@
+<nav>
+    <div class="nav-wrapper blue-grey lighten-4">
+      <a href="/" class="brand-logo">PAWLY</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li> <% if current_user %>
+          <%= link_to 'Appointments', appointments_path, method: :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1" %>
+        <% end %>
+        </li>
+        <li> <%= link_to "Dogs", dogs_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+        <li> <%= link_to "Users", users_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+        <li> <%= link_to "Home", home_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+        <li><% if current_user %>
+          <%= link_to 'Logout', logout_path, method: :delete, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1" %>
+        <% end %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="jessy">
+  <div class="row">
+    <div class="col s3 offset-s3">
+      <div class="card">
+        <div class="card-image">
+          <img src="/jessy.jpg" style="width:338px;height:338px;">
+          <span class="card-title"></span>
+        </div>
+        <div class="card-content">
+          <p>Name: Jessy Hu</p>
+          <p>Occupation: Student</p>
+          <p>School: Flatiron School</p>
+          <p>Location: Queens, New York</p>
+          <br>
+          <p>HIREEEE ME!</p>
+
+        </div>
+        <div class="card-action">
+          <a href="https://www.instagram.com/jsy.hu/">Jessy Hu</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s3">
+      <div class="card">
+        <div class="card-image">
+          <img src="/vicky.png" style="width:338px;height:338px;">
+          <span class="card-title"></span>
+        </div>
+        <div class="card-content">
+          <p>Name: Victoria Mei</p>
+          <p>Occupation: Student</p>
+          <p>School: Flatiron School</p>
+          <p>Location: Brooklyn, New York</p>
+          <br>
+          <p>HIREEEE ME!</p>
+
+        </div>
+        <div class="card-action">
+          <a href="https://www.instagram.com/vickysdailystandup/">Victoria Mei</a>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+<div class="team flow-text grey-text text-lighten-1">
+  <h2>THE TEAM!</h2>
+</div>
