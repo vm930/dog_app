@@ -1,35 +1,39 @@
-<h1>create a user</h1>
 
-  <% if flash[:user_errors] %>
-    <% flash[:user_errors].each do |error| %>
-      <li> <%= error %> </li>
+<h1 class = "form_header">create a user</h1>
+
+<div class="container input-field">
+    <ol id = "errors">
+      <% if flash[:user_errors] %>
+        <% flash[:user_errors].each do |error| %>
+          <li> <%= error %> </li>
+        <% end %>
+      <% end %>
+    </ol>
+
+    <%= form_for @user, html: {class:"form_input"} do |f| %>
+
+    <%= f.label :username %>
+    <%= f.text_field :username %><br>
+
+    <%= f.label :password %>
+    <%= f.text_field :password %><br>
+
+    <%= f.label "Full Name" %>
+    <%= f.text_field :full_name %><br>
+
+    <%= f.label :age %>
+    <%= f.number_field :age %><br>
+
+    <%= f.label :location %>
+    <%= f.text_field :location %><br>
+
+    <%= f.label :occupation %>
+    <%= f.text_field :occupation %><br>
+
+    <%= f.label :bio %>
+    <%= f.text_area :bio %><br>
+
+    <%= f.submit class: "waves-effect blue-grey lighten-1 btn" %>
+
     <% end %>
-  <% end %>
-</ol>
-
-<%= form_for @user do |f| %>
-
-<%= f.label :username %>
-<%= f.text_field :username %><br>
-
-<%= f.label :password %>
-<%= f.text_field :password %><br>
-
-<%= f.label "Full Name" %>
-<%= f.text_field :full_name %><br>
-
-<%= f.label :age %>
-<%= f.number_field :age %><br>
-
-<%= f.label :location %>
-<%= f.text_field :location %><br>
-
-<%= f.label :occupation %>
-<%= f.text_field :occupation %><br>
-
-<%= f.label :bio %>
-<%= f.text_area :bio %><br>
-
-<%= f.submit %>
-
-<% end %>
+</div>

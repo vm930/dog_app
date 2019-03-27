@@ -14,7 +14,57 @@
  *= require_self
  */
 
+ /*
+ vickys change begin 
+ */
+
  @import "materialize";
+
+
+ /* h1 {
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 3em;
+ } */
+
+ .container {
+    /* height: 50px; */
+ }
+
+ .form_input {
+    height: 50px;
+ }
+
+ .form_header {
+    text-align: center;
+    text-emphasis-color: #263238;
+    font-size: 3.5em;
+ }
+ .input-field {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 25%;
+ }
+
+ #errors {
+    font-size: 78%;
+    color: red;
+    text-align: left;
+    margin: 15%;
+ }
+
+ .btn {
+     margin: 22%;
+ }
+
+
+.login {
+    text-emphasis-color: #263238;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+ /*
+ vickys change end 
+ */
 
  .Logo {
    position: absolute;
