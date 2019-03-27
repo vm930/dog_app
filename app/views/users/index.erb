@@ -1,10 +1,45 @@
+<nav>
+    <div class="nav-wrapper blue-grey lighten-4">
+      <a href="/" class="brand-logo">PAWLY</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li> <%= link_to "Dogs", dogs_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+        <li> <%= link_to "Home", home_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+        <li> <%= link_to "Login", login_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+      </ul>
+    </div>
+  </nav>
 
-<h1>All Of Users</h1>
 
-<ul>
-<div class="input-field">
-<% @users.each do |user| %>
-<li><%= user.full_name %></li><br>
+  <div class="row">
+    <% @users.each do |user| %>
+    <div class="col s3">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://i.imgur.com/Bm1gCyS.png" style="width:338px;height:338px;">
+          <span class="card-title"></span>
+        </div>
+        <div class="card-content">
+          <p><%= user.age %></p>
+          <p><%= user.occupation %></p>
+          <p><%= user.location %></p>
+          <p><%= user.bio %></p>
+        </div>
+        <div class="card-action">
+          <a href="#"><%= user.full_name %></a>
+        </div>
+      </div>
+    </div>
+
 <% end %>
-</ul>
 </div>
+
+<footer class="page-footer white lighten-3">
+    <div class="container">
+        <div class="footer-copyright blue-grey lighten-4">
+            <div class="container">
+              © 2019 Copyright Text
+              <a class="grey-text text-lighten-4 right" href="#!">Made With Love // <3 </a>
+            </div>
+        </div>
+    </div>
+</footer>

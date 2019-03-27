@@ -1,5 +1,47 @@
-<h1>List of all Dogs</h1>
+<nav>
+    <div class="nav-wrapper blue-grey lighten-4">
+      <a href="/" class="brand-logo">PAWLY</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li> <%= link_to "Users", users_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+        <li> <%= link_to "Home", home_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+        <li> <%= link_to "Login", login_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+      </ul>
+    </div>
+  </nav>
 
-<% @dogs.each do |dog| %>
-<%= dog.name %>
+
+  <div class="row">
+    <% @dogs.each do |dog| %>
+    <div class="col s3">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://i.imgur.com/OPAR3PC.jpg" style="width:338px;height:338px;">
+          <span class="card-title"></span>
+        </div>
+        <div class="card-content">
+          <p><%= dog.gender %></p>
+          <p><%= dog.breed %></p>
+          <p><%= dog.color %></p>
+          <p><%= dog.age %></p>
+          <p><%= dog.personality %></p>
+          <p><%= dog.size %></p>
+          <p><%= dog.location %></p>
+        </div>
+        <div class="card-action">
+          <a href="#"><%= dog.name %></a>
+        </div>
+      </div>
+    </div>
+
 <% end %>
+</div>
+
+<footer class="page-footer white lighten-3">
+          <div class="container">
+          <div class="footer-copyright blue-grey lighten-4">
+            <div class="container">
+            © 2019 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">Made With Love // <3 </a>
+            </div>
+          </div>
+        </footer>

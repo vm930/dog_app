@@ -1,19 +1,66 @@
-<body>
-      <div class="container">
-        <!-- Page Content goes here -->
-        <h1>PAW-LY</h1> <br>
-        <h4> <%= flash[:logout] %></h4>
-      </div>
-    </body>
 
-<h2> View Our Community </h2>
-<%= button_to "Users", users_path, :method => :get %><br>
-<%= button_to "Dogs", dogs_path, :method => :get %><br>
-<%= button_to "Appointments", appointments_path, :method => :get %>
+<div class="Logo">
+<img src="/pawly.png" style="width:130px;height:130px;">
+</div>
+
+<div class="background">
+<img src="/dog2.jpg" style="width:1000px;height:603px;">
+</div>
+
+<div class="started_button">
+<%= button_to "Get Started", get_started_path, :method => :get, class: "waves-effect waves-light btn blue-grey lighten-3"%>
+</div>
+
+<div class="login_button">
+<%= button_to "Log in", login_path, :method => :get, class: "waves-effect waves-light btn blue-grey lighten-3"%>
+</div>
+
+<div class="dog_button">
+<%= button_to "Dogs", dogs_path, :method => :get, class: "waves-effect waves-light btn-flat transparent grey-text text-darken-1"%>
+</div>
+
+<div class="users_button">
+<%= button_to "Users", users_path, :method => :get, class: "waves-effect waves-hard btn-flat transparent grey-text text-darken-1"%>
+</div>
+
+<div class="support_button">
+<a class="waves-effect waves-hard btn-flat transparent grey-text text-darken-1">Support</a>
+</div>
+
+<div class="Paragraph flow-text white-text text-darken-2">
+<h6>Join the growing community of dogs and extremely talented people!</h6>
+</div>
+
+<div class="logo flow-text white-text text-darken-2">
+<h4>PAWLY</h4>
+</div>
+
+<div class="started_button2">
+<%= button_to "Get Started", get_started_path, :method => :get, class: "waves-effect waves-light btn-small blue-grey lighten-3"%>
+</div>
+
+<div class="random">
+ <a class="btn-floating btn-large waves-effect waves-light btn-small blue-grey lighten-3"><i class="material-icons">+</i></a>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <!-- <div class="container">
+      <%# <%= button_to "Appointments", appointments_path, :method => :get %> %>
+  </div> -->
 
 
-<h2> Join Our Community </h2>
 
-<%= button_to "Login", login_path, :method => :get%> <br>
-<%= button_to "Get Started", get_started_path, :method => :get%> <br>
-<%= button_to 'Logout', logout_path, method: :delete %> <br>
+<h4> <%= flash[:logout] %></h4>
+<div class="started">
+<%# <%= button_to 'Logout', logout_path, method: :delete %> <br>
+</div>

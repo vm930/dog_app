@@ -20,6 +20,7 @@
 
  @import "materialize";
 
+
  /* h1 {
      font-family: Arial, Helvetica, sans-serif;
      font-size: 3em;
@@ -64,3 +65,68 @@
  /*
  vickys change end 
  */
+
+ .Logo {
+   position: absolute;
+   top: 0px;
+   left: 10px;
+ }
+
+ .background {
+   position: absolute;
+   bottom: 5px;
+   right: 220px;
+ }
+
+.started_button {
+  position: absolute;
+  top: 50px;
+  right: 30px;
+}
+
+.login_button {
+  position: absolute;
+  top: 50px;
+  right: 196px;
+}
+
+.dog_button {
+  position: absolute;
+  top: 51px;
+  right: 1220px;
+}
+
+.users_button {
+  position: absolute;
+  top: 51px;
+  right: 1125px;
+}
+
+.support_button {
+  position: absolute;
+  top: 51px;
+  right: 1005px;
+}
+
+.Paragraph {
+  position: absolute;
+  top: 692px;
+  left: 400px;
+  font-family: ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.started_button2 {
+  position: absolute;
+  top: 695px;
+  left: 935px;
+}
+
+.random {
+  position: absolute;
+  top: 695px;
+  right: 18px;
+}
+
+.brand-logo {
+  margin-left: 10px;
+}
