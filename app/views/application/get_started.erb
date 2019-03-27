@@ -1,6 +1,8 @@
-What Profile Would you Like to Create? <br>
+
+<h1 class = "form_header">What Profile Would you Like to Create? </h1>
 <br>
-<br>
-<%= button_to "Create User Profile", new_user_path, :method => :get%>
-<p>or</p>
-<%= button_to "Create Dog Profile", new_dog_path, :method => :get%>
+<div class="get_started container">
+<%= button_to "Create User Profile", new_user_path, :method => :get, class: "waves-effect waves-light btn-large blue-grey lighten-3" %>
+<h3>or</h3>
+<%= button_to "Create Dog Profile", new_dog_path, :method => :get, class: "waves-effect waves-light btn-large blue-grey lighten-3"%>
+<div class="get_started">
