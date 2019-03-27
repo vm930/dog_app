@@ -1,7 +1,8 @@
-<h1> Login </h1>
+<h1 class = "form_header login">Login to Powly</h1>
 
-<h4> <%= flash[:notice] %></h4>
+<h4 id = "errors"> <%= flash[:notice] %></h4>
 
+<div class="container input-field">
 <%= form_tag(login_path) do %>
 
   <%= label_tag :username%>
@@ -11,7 +12,8 @@
   <%= password_field_tag :password%> <br>
 
   <%= label_tag "Sign in as" %>
-  <%= select_tag "dog_or_user","<option>Dog</option><option>User</option>".html_safe%> <br>
+  <%= select_tag "dog_or_user","<option>Dog</option><option>User</option>".html_safe, class:"browser-default"%> <br>
 
-  <%= submit_tag "Login"%>
+  <%= submit_tag "Login", class:"waves-effect blue-grey lighten-1 btn"%>
 <% end %>
+</div>
