@@ -29,6 +29,10 @@
     text-emphasis-color: #263238;
     font-size: 3.5em;
  }
+ .body {
+   background-image: url("dog3.jpg");
+   height: 100%;
+ }
  .input-field {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 25%;
