@@ -20,6 +20,10 @@
 
  @import "materialize";
 
+ html, body {
+   height: 100%;
+ }
+
  .form_input {
     height: 50px;
  }
@@ -33,6 +37,26 @@
    background-image: url("dog3.jpg");
    height: 100%;
  }
+
+ .body2 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  /* The image used */
+  background-image: url("dog4.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: bottom;
+  background-size: cover;
+
+  }
+.button1 {
+  padding: 2%;
+}
+
  .input-field {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 25%;
@@ -77,9 +101,25 @@
  }
 
  .background {
-   position: absolute;
-   bottom: 15px;
-   right: 220px;
+   background-image: url("dog2.jpg");
+   width:1000px;
+   height:603px;
+   background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+   /* position: absolute; */
+   /* bottom: 15px;
+   right: 220px; */
+ }
+
+ .home-page-background {
+   display: flex;
+   justify-content: center;
+ }
+
+ .home-page {
+   height: 98px;
  }
 
 .started_button {
@@ -119,16 +159,19 @@
 }
 
 .Paragraph {
-  position: absolute;
-  top: 683px;
-  left: 400px;
+  /* position: absolute; */
+  /* top: 683px;
+  left: 400px; */
   font-family: ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 8px;
+
 }
 
 .started_button2 {
-  position: absolute;
+  /* position: absolute;
   top: 687px;
-  left: 933px;
+  left: 933px; */
+  padding: 7px;
 }
 
 .brand-logo {
