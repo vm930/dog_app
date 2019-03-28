@@ -12,27 +12,37 @@
     </div>
   </nav>
 
+  <%= form_tag(appointments_path, method: "get",) do %>
+    <%= label_tag("appt_search", "Search for:") %>
+    <%= text_field_tag :appt_search%>
+    <%= submit_tag("SEARCH") %>
+  <% end %><br>
 
-<div class="container">
-<ol id = "errors">
- <%= flash[:appt_notice] %><br>
- </ol>
+<div class="row">
+  <% @appointments.each do |appointment| %>
+  <div class="col s3">
+    <div class="card">
+      <div class="card-image">
+        <img src="https://i.imgur.com/OPAR3PC.jpg" style="width:338px;height:338px;">
+        <span class="card-title"></span>
+      </div>
+      <div class="card-content">
+        <p>Title: <%= appointment.title %></p>
+        <p>Category: <%= appointment.category %></p>
+        <p>Dog: <%= appointment.dog.name %></p>
+        <p>Location: <%= appointment.location %></p>
+        <p>Price: <%= appointment.price %></p>
+        <p>Date: <%= appointment.date %></p>
+      </div>
+      <div class="card-action">
+        <a href="<%= appointment_path(appointment) %>"><%= appointment.title %></a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  </div>
 
-
-<%= form_tag(appointments_path, method: "get",) do %>
-  <%= label_tag("appt_search", "Search for:") %>
-  <%= text_field_tag :appt_search%>
-  <%= submit_tag("Go") %>
-<% end %><br>
-
-<div class="container">
-<% @appointments.each do |appt| %>
-<li><%= link_to appt.title, appointment_path(appt) %></li>
-<%= appt.location %>
-<%= appt.dog.name%>
-<%= appt.user_id%>
-<%= appt.description %> <br>
-<% end %>
-<br>
-</div>
-
+  <div class="container">
+  <ol id = "errors">
+   <%= flash[:appt_notice] %><br>
+   </ol>
