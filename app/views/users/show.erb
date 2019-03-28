@@ -1,16 +1,50 @@
-<h1>This is a show page for user</h1>
+<nav>
+    <div class="nav-wrapper blue-grey lighten-4">
+      <a href="/" class="brand-logo">PAWLY</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li> <%= link_to "Dogs", dogs_path, :method => :get, class: "waves-effect waves-light btn-flat white grey-text text-darken-1"%></li>
+        <li> <%= link_to "Users", users_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+        <li> <%= link_to "Home", home_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+          <li>  <% if current_user %>
+                <%= link_to 'Logout', logout_path, method: :delete, class: "waves-effect waves-light btn-flat white grey-text text-darken-1" %>
+                <% end %>
+          <li>
+    </div>
+  </nav>
 
-<ul>
-<li>
-<label>This User</label><br>
-<br>
-<%= @user.full_name %><br>
-<label>Location</label>
-<%= @user.location %>
-</li>
-</ul>
-<%= button_to 'Logout', logout_path, method: :delete %> <br>
-<% if current_user.id == @user.id %>
-<%= button_to "Edit", edit_user_path(@user.id), :method => :get %> <br>
-<%= button_to "Delete", @user, :method => :delete %>
-<% end %>
+  <div class="row">
+    <div class="col s4 offset-s2">
+      <div class="card">
+
+        <div class="card-content">
+          <p>Name: <%= @user.full_name %> </p>
+          <p>Age: <%= @user.age %></p>
+          <p>Occupation: <%= @user.occupation %></p>
+          <p>Location: <%= @user.location %></p>
+          <p>Bio: <%= @user.bio %></p>
+        </div>
+        <div class="card-action">
+          <a href=""><%= @user.full_name %></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dog-profile-pic">
+    <img src="/blake.jpg" style="width:500px;height:500px;">
+    </div>
+
+    <div class="edit_user_button">
+      <% if current_user.class.model_name.name == "User" && current_user.id == @user.id %>
+      <%= button_to "Edit", edit_user_path(@user.id), :method => :get, class: "waves-effect waves-light btn-large blue-grey lighten-3" %>
+    <% end %>
+    </div>
+
+    <div class="delete_user_button">
+      <% if current_user.class.model_name.name == "User" && current_user.id == @user.id %>
+      <%= button_to "Delete", @user, :method => :delete, class: "waves-effect waves-light btn-large blue-grey lighten-3" %>
+    <% end %>
+    </div>
+
+    <div class="user_name">
+      <h1><%= @user.full_name %></h1>
+    </div>
