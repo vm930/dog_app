@@ -1,53 +1,52 @@
 <div class="home-page">
 
-<div class="Logo">
-<img src="/pawly.png" style="width:135px;height:135px;">
-</div>
+  <div class="Logo">
+    <img src="/pawly.png" style="width:135px;height:135px;">
+  </div>
 
-<div class="started_button">
-  <% if current_user == nil %>
-<%= button_to "Get Started", get_started_path, :method => :get, class: "waves-effect waves-light btn blue-grey lighten-3"%>
-<% end %>
-</div>
+      <div class="started_button">
+          <% if current_user == nil %>
+            <%= button_to "Get Started", get_started_path, :method => :get, class: "waves-effect waves-light btn blue-grey lighten-3"%>
+          <% end %>
+      </div>
 
-<div class="login_button">
-  <% if current_user == nil %>
-<%= button_to "Log in", login_path, :method => :get, class: "waves-effect waves-light btn blue-grey lighten-3"%>
-<% end %>
-</div>
+      <div class="login_button">
+          <% if current_user == nil %>
+            <%= button_to "Log in", login_path, :method => :get, class: "waves-effect waves-light btn blue-grey lighten-3"%>
+          <% end %>
+      </div>
 
-<div class="dog_button">
-<%= button_to "Dogs", dogs_path, :method => :get, class: "waves-effect waves-light btn-flat transparent grey-text text-darken-1"%>
-</div>
+      <div class="dog_button">
+          <%= button_to "Dogs", dogs_path, :method => :get, class: "waves-effect waves-light btn-flat transparent grey-text text-darken-1"%>
+      </div>
 
-<div class="users_button">
-<%= button_to "Users", users_path, :method => :get, class: "waves-effect waves-hard btn-flat transparent grey-text text-darken-1"%>
-</div>
+      <div class="users_button">
+          <%= button_to "Users", users_path, :method => :get, class: "waves-effect waves-hard btn-flat transparent grey-text text-darken-1"%>
+      </div>
 
-<div class="support_button">
-<%= button_to "Support", support_path, :method => :get, class: "waves-effect waves-hard btn-flat transparent grey-text text-darken-1"%>
-</div>
+      <div class="support_button">
+          <%= button_to "Support", support_path, :method => :get, class: "waves-effect waves-hard btn-flat transparent grey-text text-darken-1"%>
+      </div>
 
-<div class="logo flow-text white-text text-darken-2">
-<h4>PAWLY</h4>
-</div>
+      <div class="logo flow-text white-text text-darken-2">
+        <h4>PAWLY</h4>
+      </div>
 
+      <div class="logout">
+          <% if current_user %>
+            <%= button_to 'Logout', logout_path, method: :delete, class: "waves-effect waves-light btn blue-grey lighten-3" %>
+          <% end %>
+      </div>
 
-
-
-<div class="logout">
-  <% if current_user %>
-    <%= button_to 'Logout', logout_path, method: :delete, class: "waves-effect waves-light btn blue-grey lighten-3" %>
-  <% end %>
-</div>
-
-<div class="appointments">
-  <% if current_user %>
-    <%= button_to 'Appointments', appointments_path, method: :get, class: "waves-effect waves-hard btn-flat transparent grey-text text-darken-1" %>
-  <% end %>
-</div>
+      <div class="appointments">
+          <% if current_user %>
+            <%= button_to 'Appointments', appointments_path, method: :get, class: "waves-effect waves-hard btn-flat transparent grey-text text-darken-1" %>
+          <% end %>
+      </div>
 
 </div>
+
+<!-- ################################################################ -->
 
 <div class="home-page-background">
 
