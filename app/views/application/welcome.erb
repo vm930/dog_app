@@ -8,7 +8,9 @@
 </div>
 
 <div class="started_button">
+  <% if current_user == nil %>
 <%= button_to "Get Started", get_started_path, :method => :get, class: "waves-effect waves-light btn blue-grey lighten-3"%>
+<% end %>
 </div>
 
 <div class="login_button">
@@ -41,9 +43,6 @@
 <%= button_to "Get Started", get_started_path, :method => :get, class: "waves-effect waves-light btn-small blue-grey lighten-3"%>
 </div>
 
-<div class="random">
- <a class="btn-floating btn-large waves-effect waves-light btn-small blue-grey lighten-3"><i class="material-icons">+</i></a>
-</div>
 
 <div class="logout">
   <% if current_user %>

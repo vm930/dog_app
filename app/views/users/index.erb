@@ -26,10 +26,9 @@
           <span class="card-title"></span>
         </div>
         <div class="card-content">
-          <p><%= user.age %></p>
-          <p><%= user.occupation %></p>
-          <p><%= user.location %></p>
-          <p><%= user.bio %></p>
+          <p>Name: <%= user.full_name %></p>
+          <p>Age: <%= user.age %></p>
+          <p>Location: <%= user.location %></p>
         </div>
         <div class="card-action">
           <a href="<%= user_path(user) %>"><%= user.full_name %></a>

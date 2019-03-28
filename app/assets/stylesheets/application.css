@@ -79,20 +79,26 @@
 
  .background {
    position: absolute;
-   bottom: 5px;
+   bottom: 15px;
    right: 220px;
  }
 
 .started_button {
   position: absolute;
-  top: 15px;
-  right: 53px;
+  top: 2.75%;
+  right: 12.75%;
 }
 
 .login_button {
   position: absolute;
-  top: 25px;
-  right: 199px;
+  top: 4.25%;
+  right: 3.75%;
+}
+
+.logout {
+  position: absolute;
+  top: 3.9%;
+  right: 3.89%;
 }
 
 .dog_button {
@@ -115,21 +121,15 @@
 
 .Paragraph {
   position: absolute;
-  top: 692px;
+  top: 683px;
   left: 400px;
   font-family: ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .started_button2 {
   position: absolute;
-  top: 695px;
-  left: 935px;
-}
-
-.random {
-  position: absolute;
-  top: 695px;
-  right: 18px;
+  top: 687px;
+  left: 933px;
 }
 
 .brand-logo {
@@ -156,14 +156,42 @@
   font-family: ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.logout {
-  position: absolute;
-  top: 24px;
-  right: 199px;
-}
-
 .appointments {
   position: absolute;
   top: 51px;
   right: 59.5%;
+}
+
+.edit_dog_button {
+  position: absolute;
+  top: 75%;
+  right: 50.75%;
+}
+.delete_dog_button {
+  position: absolute;
+  top: 65.25%;
+  right: 50.75%;
+}
+.appointment_make_button {
+  position: absolute;
+  top: 55.75%;
+  right: 50.75%;
+}
+.dog-profile-pic {
+  position: absolute;
+  top: 15.5%;
+  left: 50%;
+  font-family: ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.edit_user_button {
+  position: absolute;
+  top: 61.75%;
+  right: 50.75%;
+}
+
+.delete_user_button {
+  position: absolute;
+  top: 52%;
+  right: 50.75%;
 }
