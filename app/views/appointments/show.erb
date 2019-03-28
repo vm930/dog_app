@@ -1,19 +1,49 @@
-<h1>appointment show page</h1>
+<nav>
+    <div class="nav-wrapper blue-grey lighten-4">
+      <a href="/" class="brand-logo">PAWLY</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li> <%= link_to "Dogs", dogs_path, :method => :get, class: "waves-effect waves-light btn-flat white grey-text text-darken-1"%></li>
+        <li> <%= link_to "Users", users_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+        <li> <%= link_to "Home", home_path, :method => :get, class: "waves-effect waves-hard btn-flat white grey-text text-darken-1"%> </li>
+          <li>  <% if current_user %>
+                <%= link_to 'Logout', logout_path, method: :delete, class: "waves-effect waves-light btn-flat white grey-text text-darken-1" %>
+                <% end %>
+          <li>
+    </div>
+  </nav>
+
+<ul id = "errors">
 <h4><%= flash[:cant_delete]  %></h4>
+</ul>
 
-<label>
-Appointment Title:
-</label>
-<%= @appointment.title %><br>
+  <div class="row">
+    <div class="col s4 offset-s2">
+      <div class="card">
 
-<% if @appointment.user %>
-  Taken By: <%= @appointment.user.full_name%>
-<% else  %>
-  This appointment has not been taken yet
+      <div class="card-content">
+        <p>Appointment Title: <%= @appointment.title %> </p>
+        <%if @appointment.user %>
+        <p>Taken By: <%= @appointment.user.full_name %></p>
+        <%else %>
+        <p>Ops! This appointment has not been taken yet!</p>
+        <%end %>
+        <p>Location: <%= @appointment.location %></p>
+      </div>
+     </div>
+    </div>
+  </div>
+
+    <div class="dog-profile-pic">
+    <img src="/dogingrass.jpg" style="width:500px;height:500px;">
+    </div>
+
+    <div class="appointment_make_button">
+    <%  if current_user.class.model_name.name == "User" && @appointment.user_id == nil %>
+    <%= button_to "Take Appointment", appointment_helper_path(@appointment.id), :method => :patch, class:"waves-effect waves-light btn-large blue-grey lighten-3" %>
+    
+    </div>
+
+     <div class="delete_dog_button">
+    <%= button_to "Delete", @appointment, :method => :delete, class: "waves-effect waves-light btn-large blue-grey lighten-3"%>
+    </div>
 <% end %>
-
-<%  if current_user.class.model_name.name == "User" && @appointment.user_id == nil %>
-<%= button_to "Take Appointment", appointment_helper_path(@appointment.id), :method => :patch %>
-<% end %>
-
-<%= button_to "Delete", @appointment, :method => :delete %>
