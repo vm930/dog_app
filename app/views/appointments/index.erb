@@ -13,15 +13,19 @@
   </nav>
 
 
+<div class="container">
+<ol id = "errors">
+ <%= flash[:appt_notice] %><br>
+ </ol>
 
-<h4> <%= flash[:appt_notice] %></h4>
 
-<%= form_tag(appointments_path, method: "get") do %>
+<%= form_tag(appointments_path, method: "get",) do %>
   <%= label_tag("appt_search", "Search for:") %>
   <%= text_field_tag :appt_search%>
   <%= submit_tag("Go") %>
 <% end %><br>
 
+<div class="container">
 <% @appointments.each do |appt| %>
 <li><%= link_to appt.title, appointment_path(appt) %></li>
 <%= appt.location %>
@@ -30,3 +34,5 @@
 <%= appt.description %> <br>
 <% end %>
 <br>
+</div>
+

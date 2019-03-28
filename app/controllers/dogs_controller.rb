@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-  skip_before_action :authorized, only: :index
+  skip_before_action :authorized, only: [:index,:new,:create]
 
   def index
     @dogs = Dog.all
@@ -12,7 +12,7 @@ class DogsController < ApplicationController
   def create
     dog = Dog.create(dog_param)
     if dog.valid?
-        redirect_to dog_path(dog.id)
+        redirect_to login_path
     else
       flash[:dog_errors] = dog.errors.full_messages
         redirect_to new_dog_path

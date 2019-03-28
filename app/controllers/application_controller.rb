@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authorized #lock down this whole app
-  skip_before_action :authorized, only: [:welcome, :support]
+  skip_before_action :authorized, only: [:welcome, :support,:get_started]
   helper_method :current_user #i can call current_user from a view
 
   def current_user
