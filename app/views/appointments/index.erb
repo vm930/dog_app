@@ -12,11 +12,20 @@
     </div>
   </nav>
 
-  <%= form_tag(appointments_path, method: "get",) do %>
-    <%= label_tag("appt_search", "Search for:") %>
-    <%= text_field_tag :appt_search%>
-    <%= submit_tag("SEARCH") %>
-  <% end %><br>
+<nav>
+    <div class="nav-wrapper blue-grey lighten-4">
+  <%= form_tag appointments_path, method: "get" do %>
+    <div class="input-field">
+    <input id="search" type="search" required name="appt_search">
+    <label class="label-icon" for="search"><i class="material-icons left">search</i></label>
+    <i class="material-icons">close</i>
+
+    </div>
+  <% end %>
+  <br>
+  
+  </div>
+  </nav>
 
 <div class="row">
   <% @appointments.each do |appointment| %>
